@@ -1,0 +1,12 @@
+rule all:
+    input:
+        "results/output.txt"
+
+rule run_r_script:
+    input:
+        "scripts/analysis.R"
+    output:
+        "results/output.txt"
+    shell:
+#        "D:/software/R-4.4.1/bin/x64/Rscript.exe {input} > {output}"
+        "D:/software/R-4.4.1/bin/x64/Rscript.exe {input}"

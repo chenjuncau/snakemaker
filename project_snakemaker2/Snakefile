@@ -1,0 +1,40 @@
+# Snakefile
+
+rule all:
+    input:
+        "results/output_r.txt",
+        "results/output1.txt",
+        "results/output2.txt",
+        "results/output_py.txt"
+
+rule run_r_script:
+    input:
+        "scripts/script.R"
+    output:
+        "results/output_r.txt"
+    shell:
+        "D:/software/R-4.4.1/bin/x64/Rscript.exe {input}"
+
+rule run_shell_script1:
+    input:
+        "scripts/script1.sh"
+    output:
+        "results/output1.txt"
+    shell:
+        "bash {input}"
+
+rule run_shell_script2:
+    input:
+        "scripts/script2.sh"
+    output:
+        "results/output2.txt"
+    shell:
+        "bash {input}"
+
+rule run_python_script:
+    input:
+        "scripts/script.py"
+    output:
+        "results/output_py.txt"
+    shell:
+        "C:/Users/chenj/AppData/Local/Microsoft/WindowsApps/python3.exe scripts/script.py"
